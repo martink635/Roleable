@@ -12,7 +12,7 @@ trait CanTrait
      */
     public function roles()
     {
-        return $this->belongsToMany('Koterle\\Roleable\\Role')
+        return $this->belongsToMany('Koterle\\Roleable\\Role', Config::get('roleable::tables.role_user'))
             ->withPivot('roleable_id', 'roleable_type')
             ->withTimestamps();
     }
