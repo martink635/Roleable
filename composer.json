@@ -1,0 +1,25 @@
+{
+    "name": "mkoterle/roleable",
+    "description": "Simple role management and authorization library for Laravel.",
+    "keywords": ["authorization", "roles", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Koterle",
+            "email": "martin.koterle@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0."
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Koterle\\Roleable\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
