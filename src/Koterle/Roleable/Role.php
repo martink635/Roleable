@@ -11,7 +11,7 @@ class Role extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(Config::get('roleable.user_model', 'App\\User'))
+        return $this->belongsToMany(Config::get('roleable::user_model', 'App\\User'))
             ->withPivot('roleable_id', 'roleable_type')
             ->withTimestamps();
     }
