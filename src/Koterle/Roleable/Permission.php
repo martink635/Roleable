@@ -10,7 +10,17 @@ class Permission extends Model
      *
      * @var string
      */
-    protected $table = Config::get('roleable::tables.permissions');
+    protected $table;
+
+    /**
+     * Sets the table value from the config.
+     *
+     * @return void
+     */
+    function __construct()
+    {
+        $this->table = \Config::get('roleable::tables.permissions');
+    }
 
     /**
      *  Many to Many relationship
@@ -19,7 +29,7 @@ class Permission extends Model
      */
     public function roles()
     {
-        return $this->belongsToMany('Koterle\\Roleable\\Role', Config::get('roleable::tables.permission_role'))
+        return $this->belongsToMany('Koterle\\Roleable\\Role', \Config::get('roleable::tables.permission_role'))
             ->withTimestamps();
     }
 }
