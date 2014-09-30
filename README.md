@@ -22,7 +22,7 @@ Publish the config file, and make sure you set your User model and User ID type
 correctly.
 
 ``` php
-php artisan config:publish koterle/roleable
+php artisan publish:config koterle/roleable
 ```
 
 Run the migrations.
