@@ -12,10 +12,10 @@ class CreateRoleUserTable extends Migration {
 
 	public function __construct()
 	{
-		$this->role_user = Config::get('roleable::tables.role_user', 'role_user');
-		$this->users = Config::get('roleable::tables.users', 'users');
-		$this->roles = Config::get('roleable::tables.roles', 'roles');
-		$this->user_id_type = Config::get('roleable::user_id_type', 'id');
+		$this->role_user = Config::get('roleable::tables.role_user');
+		$this->users = Config::get('roleable::tables.users');
+		$this->roles = Config::get('roleable::tables.roles');
+		$this->user_id_type = Config::get('roleable::user_id_type');
 	}
 
 	/**
@@ -30,7 +30,7 @@ class CreateRoleUserTable extends Migration {
 			$table->increments('id');
 			$table->integer('role_id')->unsigned()->index();
 
-			if ($this->user_id_type === "uuid") {
+			if ($this->user_id_type === 'uuid') {
 				$table->string('user_id', 36)->index();
 			} else {
 				$table->integer('user_id')->unsigned()->index();

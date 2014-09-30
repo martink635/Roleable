@@ -9,7 +9,7 @@ class CreateRolesTable extends Migration {
 
 	public function __construct()
 	{
-		$this->roles = Config::get('roleable::tables.roles', 'roles');
+		$this->roles = Config::get('roleable::tables.roles');
 	}
 
 	/**

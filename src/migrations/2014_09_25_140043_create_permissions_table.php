@@ -9,7 +9,7 @@ class CreatePermissionsTable extends Migration {
 
 	public function __construct()
 	{
-		$this->permissions = Config::get('roleable::tables.permissions', 'permissions');
+		$this->permissions = Config::get('roleable::tables.permissions');
 	}
 
 	/**
