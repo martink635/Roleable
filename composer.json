@@ -1,5 +1,5 @@
 {
-    "name": "mkoterle/roleable",
+    "name": "koterle/roleable",
     "description": "Simple role management and authorization library for Laravel.",
     "keywords": ["authorization", "roles", "laravel"],
     "license": "MIT",
