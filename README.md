@@ -15,6 +15,14 @@ Via Composer
 }
 ```
 
+Update Composer:
+
+    composer update --dev
+
+Once it completes, add the service provideer in your `config/app.php`.
+
+    'Koterle\Roleable\RoleableServiceProvider'
+
 
 ## Usage
 
