@@ -13,6 +13,13 @@ class Role extends Model
     protected $table;
 
     /**
+     * Mass assignment protection
+     *
+     * @var array
+     */
+    protected $fillable = ['name'];
+
+    /**
      * Sets the table value from the config.
      *
      * @return void
