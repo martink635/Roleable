@@ -17,9 +17,11 @@ class Permission extends Model
      *
      * @return void
      */
-    function __construct()
+    public function __construct(array $attributes = array())
     {
         $this->table = \Config::get('roleable::tables.permissions');
+
+        parent::__construct($attributes);
     }
 
     /**

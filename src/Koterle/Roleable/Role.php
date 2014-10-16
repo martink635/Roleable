@@ -17,9 +17,11 @@ class Role extends Model
      *
      * @return void
      */
-    function __construct()
+    public function __construct(array $attributes = array())
     {
         $this->table = \Config::get('roleable::tables.roles');
+
+        parent::__construct($attributes);
     }
 
     /**
