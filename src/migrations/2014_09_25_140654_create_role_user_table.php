@@ -36,8 +36,7 @@ class CreateRoleUserTable extends Migration {
 				$table->integer('user_id')->unsigned()->index();
 			}
 			
-			$table->string('roleable_id');
-			$table->string('roleable_type');
+			$table->morphs('roleable');
 
 			$table->timestamps();
 
