@@ -1,6 +1,6 @@
 # Roleable
 
-Simple role management for Laravel by Model class and ID.
+Simple role management for Laravel 4 by Model class and ID.
 
 
 ## Install
@@ -10,7 +10,7 @@ Via Composer
 ``` json
 {
     "require": {
-        "koterle/roleable": "1.0.*"
+        "koterle/roleable": "0.9.*"
     }
 }
 ```
