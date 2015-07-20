@@ -11,9 +11,9 @@ class CreatePermissionRoleTable extends Migration {
 
 	public function __construct()
 	{
-		$this->permission_role = Config::get('roleable::tables.permission_role');
-		$this->permissions = Config::get('roleable::tables.permissions');
-		$this->roles = Config::get('roleable::tables.roles');
+		$this->permission_role = Config::get('roleable.tables.permission_role');
+		$this->permissions = Config::get('roleable.tables.permissions');
+		$this->roles = Config::get('roleable.tables.roles');
 	}
 
 	/**

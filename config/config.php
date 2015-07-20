@@ -1,7 +1,7 @@
 <?php
 
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Users Model
@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'user_model' => Config::get('auth.model'),
+    'user_model' => config('auth.model'),
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ return [
     | Database tables
     |--------------------------------------------------------------------------
     |
-    | Here you can rename the 4 table names that are used in the migrations, if 
+    | Here you can rename the 4 table names that are used in the migrations, if
     | you do not like the defaults or you are using them for something else.
     |
     | You also need to specify the 'users' table name, since it is used in one
@@ -50,6 +50,6 @@ return [
         'permission_role' => 'permission_role',
         'role_user' => 'role_user',
 
-        'users' => Config::get('auth.table'),
+        'users' => config('auth.table'),
     ],
 ];
