@@ -19,37 +19,37 @@ Via Composer
 
 Update Composer:
 
-    `composer update --dev`
+    composer update --dev
 
 Once it completes, add the service provideer in your `config/app.php`.
 
-    `Koterle\Roleable\RoleableServiceProvider::class`
+    Koterle\Roleable\RoleableServiceProvider::class
 
 
 ## Usage
 
-Publish the config file, and make sure you set your User model and User ID type
+Publish the config file and the migrations. Make sure you set your User model and User ID type
 correctly.
 
-``` php
+```php
 php artisan vendor:publish
 ```
 
 Run the migrations.
 
-``` php
+```php
 php artisan migrate
 ```
 
 Add the CanTrait to the User model:
-``` php
+```php
 use CanTrait;
 ```
 
 Fill up the database with the desired roles and permissions.
 
 Now you can use (role name/permission, class, id):
-``` php
+```php
 if (Auth::user()->is('administrator', 'Company', 1)) { ... }
 if (Auth::user()->can('manage_users', 'Company', 1)) { ... }
 if (Auth::user()->cannot('delete_posts', 'Blog', 1)) { ... }
