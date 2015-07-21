@@ -1,7 +1,9 @@
 # Roleable
 
-Simple role management for Laravel by Model class and ID.
+Simple role management for Laravel by Model class and ID for Laravel 5.1
 
+For Laravel 5.0 use the 1.0 branch.
+For laravel 4 use the 0.9 branch.
 
 ## Install
 
@@ -10,18 +12,18 @@ Via Composer
 ``` json
 {
     "require": {
-        "koterle/roleable": "1.0.*"
+        "koterle/roleable": "1.1.*"
     }
 }
 ```
 
 Update Composer:
 
-    composer update --dev
+    `composer update --dev`
 
 Once it completes, add the service provideer in your `config/app.php`.
 
-    'Koterle\Roleable\RoleableServiceProvider'
+    `Koterle\Roleable\RoleableServiceProvider::class`
 
 
 ## Usage
@@ -30,13 +32,13 @@ Publish the config file, and make sure you set your User model and User ID type
 correctly.
 
 ``` php
-php artisan publish:config koterle/roleable
+php artisan vendor:publish
 ```
 
 Run the migrations.
 
 ``` php
-php artisan migrate --package="koterle/roleable"
+php artisan migrate
 ```
 
 Add the CanTrait to the User model:
