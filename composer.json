@@ -17,7 +17,7 @@
         "classmap": [
             "src/migrations"
         ],
-        "psr-0": {
+        "psr-4": {
             "Koterle\\Roleable\\": "src/"
         }
     },
