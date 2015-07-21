@@ -1,8 +1,11 @@
-<?php namespace Koterle\Roleable;
+<?php
+
+namespace Koterle\Roleable;
 
 use Illuminate\Support\ServiceProvider;
 
-class RoleableServiceProvider extends ServiceProvider {
+class RoleableServiceProvider extends ServiceProvider
+{
     /**
      * Register the service provider.
      *

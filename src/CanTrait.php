@@ -1,4 +1,6 @@
-<?php namespace Koterle\Roleable;
+<?php
+
+namespace Koterle\Roleable;
 
 use Koterle\Roleable\Role;
 
@@ -95,10 +97,10 @@ trait CanTrait
 
     /**
      * Fetch all user roles by model id and type.
-     * 
+     *
      * @access protected
-     * @param string $modelType 
-     * @param integer $modelId 
+     * @param string $modelType
+     * @param integer $modelId
      * @return Illuminate\Database\Eloquent\Collection
      */
     protected function fetchRoles($modelType, $modelId)
@@ -111,30 +113,32 @@ trait CanTrait
 
     /**
      * Check if one of the roles has the given permission.
-     * 
+     *
      * @access protected
-     * @param Illuminate\Database\Eloquent\Collection $roles 
-     * @param string $permissionName 
+     * @param Illuminate\Database\Eloquent\Collection $roles
+     * @param string $permissionName
      * @return boolean
      */
     protected function hasPermission($roles, $permissionName)
     {
         foreach ($roles as $role) {
             foreach ($role->permissions as $permission) {
-                if ($permission->name === $permissionName) return true;
+                if ($permission->name === $permissionName) {
+                    return true;
+                }
             }
         }
-                
+
         return false;
     }
 
     /**
      * Fetches a single user role for the given model and id.
-     * 
+     *
      * @access protected
-     * @param string $name 
-     * @param string $modelType 
-     * @param string $modelId 
+     * @param string $name
+     * @param string $modelType
+     * @param string $modelId
      * @return type
      */
     protected function fetchRole($roleName, $modelType, $modelId)

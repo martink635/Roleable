@@ -3,51 +3,49 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePermissionRoleTable extends Migration {
+class CreatePermissionRoleTable extends Migration
+{
+    protected $permission_role;
+    protected $permissions;
+    protected $roles;
 
-	protected $permission_role;
-	protected $permissions;
-	protected $roles;
+    public function __construct()
+    {
+        $this->permission_role = Config::get('roleable.tables.permission_role');
+        $this->permissions = Config::get('roleable.tables.permissions');
+        $this->roles = Config::get('roleable.tables.roles');
+    }
 
-	public function __construct()
-	{
-		$this->permission_role = Config::get('roleable.tables.permission_role');
-		$this->permissions = Config::get('roleable.tables.permissions');
-		$this->roles = Config::get('roleable.tables.roles');
-	}
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create($this->permission_role, function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->integer('permission_id')->unsigned()->index();
-			$table->integer('role_id')->unsigned()->index();
-			$table->foreign('permission_id')->references('id')->on($this->permissions)->onDelete('cascade');
-			$table->foreign('role_id')->references('id')->on($this->roles)->onDelete('cascade');
-			$table->timestamps();
-		});
-	}
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create($this->permission_role, function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('permission_id')->unsigned()->index();
+            $table->integer('role_id')->unsigned()->index();
+            $table->foreign('permission_id')->references('id')->on($this->permissions)->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on($this->roles)->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
 
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::table($this->permission_role, function($table) {
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table($this->permission_role, function ($table) {
             $table->dropForeign('permission_id');
             $table->dropForeign('role_id');
         });
 
-		Schema::drop($this->permission_role);
-	}
-
+        Schema::drop($this->permission_role);
+    }
 }
